@@ -84,7 +84,7 @@ function ProductsIndex({ go }) {
   const rows = [
     { id:'trade-regulatory', n:'/ 01', name:'Trade Regulatory', cat:'Financial Compliance · AI', yr:'2024 — Present' },
     { id:'housmart', n:'/ 02', name:'HouSmart', cat:'AI PropTech · 0→1', yr:'2026 — Present' },
-    { id:'visionweave', n:'/ 03', name:'VisionWeave', cat:'Consumer AI · Mobile · Creator Tools', yr:'Concept 2025' },
+    { id:'visionweave', n:'/ 03', name:'VisionWeave', cat:'Consumer AI · Mobile · Creator Tools', yr:'2025' },
   ];
   return (
     <section className="page">

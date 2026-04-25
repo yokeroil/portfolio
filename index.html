@@ -252,6 +252,9 @@ img{max-width:100%;display:block}
 .case-title-wrap .case-title{margin-top:0}
 .case-logo{height:clamp(160px,22vw,300px);width:auto;border-radius:24px;display:block;margin-left:auto}
 .case-tag{margin-top:24px;max-width:760px;font-size:20px;line-height:1.45;color:var(--ink-soft);font-family:'Instrument Serif',serif;font-style:italic}
+.provenance-note{background:#F8F6F0;border:1px solid var(--rule);border-radius:4px;padding:20px 24px;margin:32px 0 0;max-width:720px}
+.provenance-note .prov-label{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.provenance-note p{font-size:14px;line-height:1.6;color:var(--ink);margin:0}
 .case-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .case-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border:1px solid var(--ink);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:all .25s;background:var(--paper);color:var(--ink)}
 .case-btn:hover{background:var(--ink);color:var(--paper)}
@@ -500,9 +503,9 @@ img{max-width:100%;display:block}
 
       <div class="stat-strip fade">
         <div class="stat-cell"><div class="n"><em>$</em><span style="color:var(--ink);font-style:italic">10</span><em>M+</em></div><div class="l">Combined Annual Savings</div></div>
-        <div class="stat-cell"><div class="n">80<em>%</em></div><div class="l">Manual Workflow Reduced via AI</div></div>
-        <div class="stat-cell"><div class="n">7,000<em>+</em></div><div class="l">Enterprise Users Served</div></div>
-        <div class="stat-cell"><div class="n">25<em>+</em></div><div class="l">AI / Data Products Shipped</div></div>
+        <div class="stat-cell"><div class="n">80<em>%</em></div><div class="l">Manual Workflow Reduced</div></div>
+        <div class="stat-cell"><div class="n">4,000<em>+</em></div><div class="l">Enterprise Users Served</div></div>
+        <div class="stat-cell"><div class="n">25<em>+</em></div><div class="l">AI Products & Data Platforms Launched</div></div>
       </div>
     </div>
 
@@ -541,7 +544,7 @@ img{max-width:100%;display:block}
         <div class="pnum">/ 03</div>
         <div class="pname">VisionWeave</div>
         <div class="pcat">Consumer AI · Mobile · Creator Tools</div>
-        <div class="pyear">2025 — Present</div>
+        <div class="pyear">2025</div>
         <div class="parrow">→</div>
       </div>
     </div>
@@ -611,6 +614,7 @@ const CASES = {
     idx: '01 / 03',
     title: [<em key="e">FinComply</em>],
     tag: 'AI-powered compliance, shipped at institutional scale.',
+    provenance: <>FinComply is a <strong>public reference architecture</strong> authored as a portfolio artifact. It is firm-agnostic, draws on publicly available FINRA Rule 6830/6893 documentation and AWC enforcement actions, and contains no proprietary code, data, or confidential logic from any past or present employer.</>,
     links: [
       { label:'GitHub', href:'https://github.com/yokeroil/FinComply' },
     ],
@@ -702,9 +706,9 @@ const CASES = {
     tag: 'An AI photography coach that lives in your camera.',
     logo: 'assets/visionweave.svg',
     meta: [
-      ['Role', 'Product Lead (concept)'],
+      ['Role', 'Founder'],
       ['Company', 'Side exploration'],
-      ['Timeframe', '2025 — Present'],
+      ['Timeframe', '2025'],
       ['Stack', 'CV · Edge IoT · Vue · PyTorch'],
     ],
     links: [
@@ -779,6 +783,13 @@ function CaseStudy({ c, go }) {
             <div key={i}><div className="k">{k}</div><div className="v">{v}</div></div>
           ))}
         </div>
+
+        {c.provenance && (
+          <div className="provenance-note">
+            <span className="prov-label">— Provenance —</span>
+            <p>{c.provenance}</p>
+          </div>
+        )}
       </div>
 
       <div className="case-section">
@@ -897,7 +908,7 @@ function Experience() {
         <div>
           <h4>UBS Group</h4>
           <div className="role">Product Manager · Risk Governance</div>
-          <p style={{color:'var(--ink-soft)',fontSize:15,lineHeight:1.55,maxWidth:520}}>Data platform enablement across the operational risk function. 23 internal data assets serving 7,000+ enterprise users. Estimated $7–8M annual savings.</p>
+          <p style={{color:'var(--ink-soft)',fontSize:15,lineHeight:1.55,maxWidth:520}}>Data platform enablement across the operational risk function. 23 internal data assets serving 4,000+ enterprise users. Estimated $7–8M annual savings.</p>
           <div className="chips">
             {['Cloud Adoption','Data Pipelines','Self-Service','SQL','Python','ITIL 4'].map(x=><div className="chip" key={x}>{x}</div>)}
           </div>
@@ -966,7 +977,7 @@ function ProductsIndex({ go }) {
   const rows = [
     { id:'fincomply', n:'/ 01', name:'FinComply', cat:'US Trading Regulatory · AI', yr:'2024 — Present' },
     { id:'housmart', n:'/ 02', name:'HouSmart', cat:'AI PropTech · 0→1', yr:'2026 — Present' },
-    { id:'visionweave', n:'/ 03', name:'VisionWeave', cat:'Consumer AI · Mobile · Creator Tools', yr:'2025 — Present' },
+    { id:'visionweave', n:'/ 03', name:'VisionWeave', cat:'Consumer AI · Mobile · Creator Tools', yr:'2025' },
   ];
   return (
     <section className="page">

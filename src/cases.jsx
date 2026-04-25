@@ -4,6 +4,7 @@ const CASES = {
     idx: '01 / 03',
     title: ['Trade', <em key="e">Regulatory</em>],
     tag: 'AI-powered compliance at institutional scale',
+    provenance: <>FinComply is a <strong>public reference architecture</strong> authored as a portfolio artifact. It is firm-agnostic, draws on publicly available FINRA Rule 6830/6893 documentation and AWC enforcement actions, and contains no proprietary code, data, or confidential logic from any past or present employer.</>,
     meta: [
       ['Role', 'Product Manager'],
       ['Company', 'UBS Group · US Regulatory'],
@@ -85,9 +86,9 @@ const CASES = {
     title: [<em key="e">Vision</em>, 'Weave'],
     tag: 'An AI photography coach that lives in your camera.',
     meta: [
-      ['Role', 'Product Lead (concept)'],
+      ['Role', 'Founder'],
       ['Company', 'Side exploration'],
-      ['Timeframe', 'Concept 2025'],
+      ['Timeframe', '2025'],
       ['Stack', 'CV · Edge IoT · Vue · PyTorch'],
     ],
     vision: {
